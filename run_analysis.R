@@ -110,11 +110,12 @@ datamelt$signal <- as.factor(case_when(
 activitynames<-read.table("input/activity_labels.txt")
 activitynames<-rename(activitynames,activity=V1,activityname=V2)
 datamelt<-left_join(datamelt,activitynames)
+rm(activitynames)
 
 ##create final tidy dataset with proper order of columns and delete remains
 tidy<-select(datamelt,dataset,subject,activityname,sampletype, signal,source,acceleration,param,axis,value)
 rm(datamelt)
-write.csv(tidy,"output/tidy_data.csv")
+write.table(tidy,"output/tidy_data.txt", row.name=FALSE)
 
 
 
@@ -122,6 +123,6 @@ ts<-tidy %>%
      group_by(activityname,subject) %>%
      summarise(mean = mean(value), n = n())
 
-write.csv(ts,"output/summary_data.csv")
+write.table(ts,"output/summary_data.txt", row.name=FALSE)
 rm(tidy,ts)
 
