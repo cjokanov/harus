@@ -1,7 +1,7 @@
 # harus
 Getting and Cleaning Data Course Project - Human Activity Recognition Using Smartphone Data     
 
-input folder  - original dataset Human Activity Recognition Using Smartphone Data
+input folder  - original dataset Human Activity Recognition Using Smartphone Data   
 output folder - contains resulting tidy dataset (tidy_data.txt compressed into tidy_data.rar) and summary dataset grouped on activities and subjects (summary_data.txt)
 
 
